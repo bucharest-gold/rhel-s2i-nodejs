@@ -1,5 +1,5 @@
-FROM=openshift/base-centos7
-IMAGE_NAME=bucharestgold/centos7-s2i-nodejs
+FROM=registry.access.redhat.com/rhel7
+IMAGE_NAME=bucharestgold/rhel7-s2i-nodejs
 
 # These values are changed in each version branch
 # This is the only place they need to be changed
@@ -16,7 +16,6 @@ build:
 	docker build \
 	--build-arg NODE_VERSION=$(NODE_VERSION) \
 	--build-arg NPM_VERSION=$(NPM_VERSION) \
-	--build-arg V8_VERSION=$(V8_VERSION) \
 	-t $(TARGET) .
 
 .PHONY: squash
