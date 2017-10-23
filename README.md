@@ -15,11 +15,7 @@ official [OpenShift Documentation](https://docs.openshift.org/latest/using_image
 Node.js versions [currently provided](https://hub.docker.com/r/bucharestgold/rhel7-s2i-nodejs/tags/):
 
 <!-- versions.start -->
-* **`8.4.0`**: (8.x, latest)
-* **`7.10.1`**: (7.x)
-* **`6.11.2`**: (6.x, Boron)
-* **`5.12.0`**: (5.x)
-* **`4.8.4`**: (4.x, Argon)
+* **`8.7.0`**: (8.x, latest)
 <!-- versions.end -->
 
 ## Usage
@@ -41,16 +37,6 @@ Node.js with:
 ```
 oc new-app bucharestgold/rhel7-s2i-nodejs:latest~https://github.com/bucharest-gold/s2i-nodejs
 ```
-
-<!--
-Or, to run the latest `lts-6` release:
-
-```
-oc new-app bucharestgold/rhel7-s2i-nodejs:lts-6~https://github.com/bucharest-gold/s2i-nodejs
-```
-
-You can try using any of the available tagged Node.js releases, and your own repo sources - as long as your application source will init correctly with `npm start`, and listen on port 8080.
--->
 
 ### Environment variables
 
@@ -78,7 +64,8 @@ To change your source code in a running container, use Docker's [exec](http://do
 docker exec -it <CONTAINER_ID> /bin/bash
 ```
 
-After you [Docker exec](http://docker.io) into the running container, your current directory is set to `/opt/app-root/src`, where the source code for your application is located.
+After you [Docker exec](http://docker.io) into the running container, change directories to
+`/opt/app-root/src`, where the source code for your application is located.
 
 ### Using OpenShift's rsync
 

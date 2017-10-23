@@ -13,7 +13,7 @@ npm install -g yarn -s &>/dev/null
 #chmod -R 777 /opt/app-root/src/.config
 
 # Delete NPM things that we don't really need (like tests) from node_modules
-find /usr/local/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf
+find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf
 
 # Clean up the stuff we downloaded
-rm -rf ~/.npm ~/.node-gyp ~/.gnupg /usr/share/man /tmp/* /usr/local/lib/node_modules/npm/man /usr/local/lib/node_modules/npm/doc /usr/local/lib/node_modules/npm/html
+rm -rf ~/.npm ~/.node-gyp ~/.gnupg /tmp/* /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
