@@ -17,9 +17,11 @@ set -e
 #module_list=$(/usr/bin/comm -12 <(echo "${global_modules}") | tr '\n' ' ')
 # Link the modules
 #npm link $module_list
+cd $HOME
+pwd
 
 echo "---> Installing application source"
-cp -Rf /tmp/src/. ./
+cp -Rf /tmp/src/. $HOME
 
 if [ ! -z $HTTP_PROXY ]; then
 	echo "---> Setting npm http proxy to $HTTP_PROXY"
@@ -49,7 +51,7 @@ fi
 
 if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "---> Restoring build artifacts..."
-  mv /tmp/artifacts/* ./
+  mv /tmp/artifacts/* $HOME
 fi
 
 echo "---> Building your Node application from source"

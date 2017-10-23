@@ -19,7 +19,7 @@ build:
 	-t $(TARGET) .
 
 .PHONY: squash
-squash: 
+squash:
 	docker-squash -f $(FROM) $(TARGET) -t $(TARGET)
 
 .PHONY: test

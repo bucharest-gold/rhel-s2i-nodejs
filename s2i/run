@@ -2,6 +2,8 @@
 
 set -e
 
+cd /opt/app-root/src
+
 # Runs the nodejs application server.
 run_node() {
   exec npm run -d $NPM_RUN
